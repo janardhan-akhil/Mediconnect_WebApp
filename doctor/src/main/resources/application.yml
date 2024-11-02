@@ -1,0 +1,29 @@
+# Spring Boot Application Configuration for Doctor Microservice
+
+server:
+  port: 5555  # The port for the Doctor microservice
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/doctor_db  # Replace with your DB connection URL
+    username: root  # MySQL username
+    password: akhila  # MySQL password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # Automatically create/update tables
+    show-sql: true  # Show SQL queries in the console
+  application:
+    name: doctor-service  # The name of the microservice in Eureka
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # URL of the Eureka server
+    fetch-registry: true  # Enable fetching of registry from Eureka
+    register-with-eureka: true  # Register this service with Eureka
+
+
+
+
